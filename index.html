@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Panitikang Digital</title>
+
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f9;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero p {
+    max-width: 800px;
+    margin: auto;
+}
+
+/* SECTION */
+section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* COLORS */
+.blue { border-top: 6px solid #3498db; }
+.yellow { border-top: 6px solid #f1c40f; }
+.purple { border-top: 6px solid #8e44ad; }
+.red { border-top: 6px solid #e74c3c; }
+
+/* QR */
+.qr img {
+    width: 150px;
+    display: block;
+    margin: auto;
+}
+
+/* BUTTON */
+.btn {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    padding: 8px;
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 22px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+<h1>PANITIKANG DIGITAL</h1>
+<p>
+Ang Panitikang Digital ay isang makabagong paraan ng pag-aaral at pagpapalaganap ng Panitikan 
+sa pamamagitan ng paggamit ng teknolohiya at digital platforms. Sa kasalukuyang panahon, 
+hindi na lamang limitado sa mga aklat at tradisyunal na pamamaraan ang pagkatuto, kundi 
+lumalawak ito sa paggamit ng sosyal midya, nilalamang bidyo, at iba pang mga mapagkukunang onlayn.
+
+Layunin ng website na ito na ipakita kung paano nagiging mas epektibo, makabuluhan, at 
+interaktibo ang pag-aaral ng Panitikang Pilipino sa tulong ng teknolohiya. Inilalahad din 
+dito ang mga benepisyo, hamon, at papel ng mga guro, mag-aaral, at komunidad sa paggamit 
+ng digital platforms bilang daluyan ng kaalaman.
+
+Sa pamamagitan ng wastong paggamit ng teknolohiya, ang Panitikan ay nagiging mas buhay, 
+mas nauunawaan, at mas napapahalagahan ng bagong henerasyon.
+</p>
+</div>
+
+<!-- CARDS -->
+<section>
+<h2>📚 Mga Kaalaman</h2>
+
+<div class="grid">
+
+<div class="card blue" data-aos="fade-up"
+onclick="openModal('Panitikan sa Digital na Panahon', `Mas nagiging kawili-wili ang Panitikan sa pamamagitan ng digital platforms.
+
+Mas malinaw ang pag-unawa
+Mas engaging ang pagkatuto
+Mas naaabot ang kabataan
+
+Ngunit may hamon:
+• Mahinang internet
+• Kakulangan sa gadget
+• Kailangan ng tamang gabay`)">
+<img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353">
+<div class="card-content">
+<h3>📖 Panitikan sa Digital na Panahon</h3>
+<p>PINDOTIN</p>
+</div>
+</div>
+
+<div class="card yellow" data-aos="fade-up"
+onclick="openModal('Para sa Guro', `Ang guro ay may mahalagang papel sa paggamit ng teknolohiya.
+
+TikTok - maikling paliwanag
+YouTube - malalim na talakayan
+Facebook - diskusyon
+
+Tumataas ang interes
+Mas epektibo ang pagtuturo`)">
+<img src="https://images.unsplash.com/photo-1606326608690-4e0281b1e588">
+<div class="card-content">
+<h3>🎓 Para sa Guro</h3>
+<p>PINDOTIN</p>
+</div>
+</div>
+
+<div class="card purple" data-aos="fade-up"
+onclick="openModal('Para sa Estudyante', `Hindi lang pang-libangan ang sosyal midya, meron rin itong edukasyonal na nilalaman.
+
+Pag-aaral ng panitikan
+Pagpapahayag ng sarili
+Pagiging malikhain`)">
+<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
+<div class="card-content">
+<h3>📱 Para sa Estudyante</h3>
+<p>PINDOTIN</p>
+</div>
+</div>
+
+<div class="card red" data-aos="fade-up"
+onclick="openModal('Para sa Komunidad', `Edukasyon + Teknolohiya = Mas maliwanag na kinabukasan
+
+Nakakatulong sa pagkatuto
+Nagpapalawak ng kaalaman
+Nag-uugnay sa komunidad`)">
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+<div class="card-content">
+<h3>🌍 Para sa Komunidad</h3>
+<p>PINDOTIN</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalText"></p>
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init();
+
+function openModal(title, text) {
+    document.getElementById("modalTitle").innerText = title;
+    document.getElementById("modalText").innerText = text;
+    document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+window.onclick = function(event) {
+    let modal = document.getElementById("modal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
+</div>
+</section>
+
+<!-- QR CODES -->
+<section>
+<h2>🎥 Mga Bidyo (Scan o Pindotin)</h2>
+
+<div class="grid qr">
+
+<style>
+.grid.qr {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 350px;
+}
+
+.qr-item {
+  text-align: center;
+}
+
+.qr-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.qr-item p {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+</style>
+
+<div class="qr-item">
+  <a href="https://www.youtube.com/watch?v=WJ-PXLI5_r8" target="_blank">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.youtube.com/watch?v=WJ-PXLI5_r8">
+  </a>
+  <p>BIDYO 1</p>
+</div>
+
+<div class="qr-item">
+  <a href="https://www.youtube.com/watch?v=OtSYYpoGCr8" target="_blank">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.youtube.com/watch?v=OtSYYpoGCr8">
+  </a>
+  <p>BIDYO 2</p>
+</div>
+
+<div class="qr-item">
+  <a href="https://www.youtube.com/watch?v=ptVLSwtTzUY" target="_blank">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.youtube.com/watch?v=ptVLSwtTzUY">
+  </a>
+  <p>BIDYO 3</p>
+</div>
+
+<div class="qr-item">
+  <a href="https://www.youtube.com/watch?v=AHvSvtxnzGg" target="_blank">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.youtube.com/watch?v=AHvSvtxnzGg">
+  </a>
+  <p>BIDYO 4</p>
+</div>
+
+
+
+</div>
+
+
+<!-- DEPED SECTION -->
+<section>
+<h2>📖 Mga Mapagkakatiwalaang Sanggunian</h2>
+
+<div class="grid">
+
+<div class="card" data-aos="fade-left">
+  <div class="card-content">
+    <h3>🎥 Panitikang Digital</h3>
+    <p>
+      Isang YouTube channel na naglalaman ng mga aralin, panitikan, at digital learning content para sa mga estudyante.
+    </p>
+    <a class="btn" href="https://www.youtube.com/@PanitikangDigital" target="_blank">Bisitahin</a>
+  </div>
+</div>
+
+<div class="card" data-aos="fade-right">
+<div class="card-content">
+<h3>🏫 Department of Education (DepEd)</h3>
+<p>
+Ang DepEd ay opisyal na ahensya ng pamahalaan na nagbibigay ng kurikulum, 
+learning materials, at mga gabay sa edukasyon sa Pilipinas. Ito ay isang 
+mapagkakatiwalaang sanggunian para sa pag-aaral ng Panitikang Pilipino.
+</p>
+<a class="btn" href="https://www.deped.gov.ph" target="_blank">Bisitahin ang DepEd</a>
+</div>
+</div>
+
+<div class="card" data-aos="fade-left">
+<div class="card-content">
+<h3>📚 DepEd Commons</h3>
+<p>
+Naglalaman ng libreng learning resources at modules para sa mga guro at estudyante.
+</p>
+<a class="btn" href="https://commons.deped.gov.ph" target="_blank">Bisitahin</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
+
+</body>
+</html>
